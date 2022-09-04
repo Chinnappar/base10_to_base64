@@ -87,9 +87,38 @@ def base10_to_base64(decimal,datatype=None):
             decimal = decimal // 64
         return b64dec
 
+# ------------------------------------------------------------------------------
+# Built WebUI
+# This function is used for testing purpose from WebUI
+# ------------------------------------------------------------------------------
+def st_ui():
+    st.set_page_config(layout = "wide")
+    st.title("Convert Base10 to Base64 or Base10 to Base64")
+    st.info("Developed by Chinnappar & Team (R-AI)")
+    with st.expander("ℹ️ - About this app", expanded=True):
+        st.write(
+            """
+         -  Base64 is an encoding method for handling multibyte characters and binary data in a communication environment that uses only 64 types of printable alphanumeric characters and cannot handle other characters
+            """
+        )
+    st.write("#### Convert Base10 to Base64 or Base64 to Base610:")
+    if st.button("Test"):
+        import pandas as pd
+        import numpy as np
+        data = np.random.randint(0,10000,size=25)
+        df = pd.DataFrame(data, columns=['numbers'])
+        df_out = pd.DataFrame(columns=['Input Value (Integer)','Base64','Base10'])
+        for i in df['numbers']:
+            b64dec=base10_to_base64(i)
+            decimal=base64_to_base10(b64dec)
+            df_temp = pd.DataFrame([i,b64dec,decimal],columns=['Input Value (Integer)','Base64','Base10'])
+            df_out = df_out.append(df_temp, ignore_index = True)
+
+            with st.expander("ℹ️ - Convertion Data:", expanded=True):
+                st.write(df_out)
 
 # ------------------------------------------------------------------------------
-# Call main function using csv file as a input
+# Call main function.
 # This main function is used for testing purpose from local system
 # ------------------------------------------------------------------------------
 if __name__ == "__main__":
