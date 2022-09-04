@@ -91,7 +91,7 @@ def base10_to_base64(decimal,datatype=None):
 # Built WebUI
 # This function is used for testing purpose from WebUI
 # ------------------------------------------------------------------------------
-def st_ui():
+def s_ui():
     st.set_page_config(layout = "wide")
     st.title("Convert Base10 to Base64 or Base10 to Base64")
     st.info("Developed by Chinnappar & Team (R-AI)")
