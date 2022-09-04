@@ -80,6 +80,7 @@ def base10_to_base64(decimal,datatype=None):
     else:
         b64dec = ''
         remainder=0
+        decimal=int(decimal)
         while(decimal > 0):
             remainder = decimal % 64
             b64dec = conversion_table[remainder] + b64dec
