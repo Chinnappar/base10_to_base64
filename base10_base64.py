@@ -104,6 +104,7 @@ def s_ui():
                 """
             )
         st.write("#### Convert Base10 to Base64 or Base64 to Base610:")
+        
         if st.button("Test"):
             import pandas as pd
             import numpy as np
@@ -116,7 +117,7 @@ def s_ui():
                 df_temp = pd.DataFrame([i,b64dec,decimal],columns=['Input Value (Integer)','Base64','Base10'])
                 df_out = df_out.append(df_temp, ignore_index = True)
 
-                with st.expander("ℹ️ - Convertion Data:", expanded=True):
+                with st.expander("ℹ️ - Convertion Sample Data for Convert Base10_to_Base64 and Base10_to_Base64:", expanded=True):
                     st.write(df_out)
     except Exception as ex:
         st.error("Failed!:... "+str(ex))
