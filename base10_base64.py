@@ -101,6 +101,7 @@ def s_ui():
     st.set_page_config(layout = "wide")
     st.title("Convert Base10 to Base64 or Base10 to Base64")
     st.info("Developed by Chinnappar")
+
     with st.expander("ℹ️ - About this app", expanded=True):
         st.write(
             """
@@ -114,13 +115,14 @@ def s_ui():
         data = np.random.randint(0,10000,size=25)
         df = pd.DataFrame(data, columns=['numbers'])
         df_out = pd.DataFrame(columns=['Input Value (Integer)','Base64','Base10'])
+
         for i in df['numbers']:
             b64dec=base10_to_base64(i)
             decimal=base64_to_base10(b64dec)
             df_temp = pd.DataFrame([i,b64dec,decimal],columns=['Input Value (Integer)','Base64','Base10'])
             df_out = df_out.append(df_temp, ignore_index = True)
 
-            with st.expander("ℹ️ - Convertion Data:", expanded=True):
+            with st.expander("ℹ️ - Sample Data for Converted Base10 to Base64 & Base64 to Base10:", expanded=True):
                 st.write(df_out)
 
 # ------------------------------------------------------------------------------
@@ -145,7 +147,7 @@ if __name__ == "__main__":
         #print("Base10:",base10)
 
 
-        #s_ui()
+        s_ui()
         print("End - DateTime:",datetime.datetime.now())
 
     except Exception as msg:
