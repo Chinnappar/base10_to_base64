@@ -113,15 +113,20 @@ def s_ui():
         import numpy as np
         data = np.random.randint(0,10000,size=25)
         df = pd.DataFrame(data, columns=['numbers'])
-        df_out = pd.DataFrame(columns=['Input Value (Integer)','Base64','Base10'])
-        for i in df['numbers']:
-            b64dec=base10_to_base64(i)
-            decimal=base64_to_base10(b64dec)
-            df_temp = pd.DataFrame([i,b64dec,decimal],columns=['Input Value (Integer)','Base64','Base10'])
-            df_out = df_out.append(df_temp, ignore_index = True)
 
-            with st.expander("ℹ️ - Convertion Data:", expanded=True):
-                st.write(df_out)
+        try:
+            df_out = pd.DataFrame(columns=['Input Value (Integer)','Base64','Base10'])
+            for i in df['numbers']:
+                b64dec=base10_to_base64(i)
+                decimal=base64_to_base10(b64dec)
+                df_temp = pd.DataFrame([i,b64dec,decimal],columns=['Input Value (Integer)','Base64','Base10'])
+                df_out = df_out.append(df_temp, ignore_index = True)
+
+                with st.expander("ℹ️ - Convertion Data:", expanded=True):
+                    st.write(df_out)
+        
+        except Exception as ex:
+            st.error("Failed!:... "+str(ex))
 
 # ------------------------------------------------------------------------------
 # Call main function.
