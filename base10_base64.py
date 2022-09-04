@@ -13,13 +13,7 @@
 # ------------------------------------------------------------------------------
 # Call required packages
 # ------------------------------------------------------------------------------
-import pandas as pd
-import numpy as np
 import datetime
-from pandas.errors import ParserError
-import sys
-import streamlit as st
-pd.options.mode.chained_assignment = None  # default='warn'
 
 def listToDict(b):
     s = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz+/'
@@ -93,37 +87,6 @@ def base10_to_base64(decimal,datatype=None):
             decimal = decimal // 64
         return b64dec
 
-# ------------------------------------------------------------------------------
-# Built WebUI
-# This function is used for testing purpose from WebUI
-# ------------------------------------------------------------------------------
-def s_ui():
-    st.set_page_config(layout = "wide")
-    st.title("Convert Base10 to Base64 or Base10 to Base64")
-    st.info("Developed by Chinnappar")
-
-    with st.expander("ℹ️ - About this app", expanded=True):
-        st.write(
-            """
-         -  Base64 is an encoding method for handling multibyte characters and binary data in a communication environment that uses only 64 types of printable alphanumeric characters and cannot handle other characters
-            """
-        )
-    st.write("#### Convert Base10 to Base64 or Base64 to Base610:")
-    if st.button("Test"):
-        st.write("1")
-        data = np.random.randint(0,10000,size=25)
-        df = pd.DataFrame(data, columns=['numbers'])
-        st.write("1")
-        df_out = pd.DataFrame(columns=['Input Value (Integer)','Base64','Base10'])
-        st.write("1")
-
-        #for i in df['numbers']:
-        #    b64dec=base10_to_base64(i)
-        #    decimal=base64_to_base10(b64dec)
-        #    df_temp = pd.DataFrame([i,b64dec,decimal],columns=['Input Value (Integer)','Base64','Base10'])
-        #    df_out = df_out.append(df_temp, ignore_index = True)
-        #    with st.expander("ℹ️ - Sample Data for Converted Base10 to Base64 & Base64 to Base10:", expanded=True):
-        #        st.write(df_out)
 
 # ------------------------------------------------------------------------------
 # Call main function.
@@ -132,22 +95,18 @@ def s_ui():
 if __name__ == "__main__":
     try:
         print("Started - DateTime:",datetime.datetime.now())
+        print("Enter any number:")
+        s=input()
+        if s in ".":
+            base64=base10_to_base64(s,"f")
+            base10=base64_to_base10(base64,"f")
+        else:
+            base64=base10_to_base64(int(s))
+            base10=base64_to_base10(base64)
 
-        #print("Enter any number:")
-        #s=input()
-        #if s in ".":
-        #    base64=base10_to_base64(s,"f")
-        #    base10=base64_to_base10(base64,"f")
-        #else:
-        #    base64=base10_to_base64(int(s))
-        #    base10=base64_to_base10(base64)
-
-        #print("Given Value:",str(s))
-        #print("Base64:",base64)
-        #print("Base10:",base10)
-
-
-        s_ui()
+        print("Given Value:",str(s))
+        print("Base64:",base64)
+        print("Base10:",base10)
         print("End - DateTime:",datetime.datetime.now())
 
     except Exception as msg:
