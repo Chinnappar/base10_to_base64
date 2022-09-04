@@ -124,19 +124,21 @@ def st_ui():
 if __name__ == "__main__":
     try:
         print("Started - DateTime:",datetime.datetime.now())
-        print("Enter any number:")
-        s=input()
-        if s in ".":
-            base64=base10_to_base64(s,"f")
-            base10=base64_to_base10(base64,"f")
-        else:
-            base64=base10_to_base64(int(s))
-            base10=base64_to_base10(base64)
 
-        print("Given Value:",str(s))
-        print("Base64:",base64)
-        print("Base10:",base10)
-        #s_ui()
+        #print("Enter any number:")
+        #s=input()
+        #if s in ".":
+        #    base64=base10_to_base64(s,"f")
+        #    base10=base64_to_base10(base64,"f")
+        #else:
+        #    base64=base10_to_base64(int(s))
+        #    base10=base64_to_base10(base64)
+
+        #print("Given Value:",str(s))
+        #print("Base64:",base64)
+        #print("Base10:",base10)
+
+        s_ui()
         print("End - DateTime:",datetime.datetime.now())
 
     except Exception as msg:
