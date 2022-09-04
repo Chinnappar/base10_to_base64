@@ -1,3 +1,4 @@
+
 ### Convert Base10 to Base64 or Base10 to Base64
 
 Base64 is an encoding method for handling multibyte characters and binary data in a communication environment that uses only 64 types of printable alphanumeric characters and cannot handle other characters 
@@ -22,8 +23,19 @@ base10_to_base64.base64_to_base10(b64dec, datatype=None).value
 base10_to_base64.base10_to_base64(decimal, datatype=None).value
 
 
+#### Screenshots:
+Testing - Integer Values:
+
+<img width="1018" alt="Screenshot 2022-09-04 at 2 42 11 PM" src="https://user-images.githubusercontent.com/112493795/188306234-37f20e28-1f63-4f35-972f-10a6e8dc2dc9.png">
+
+Testing - Float Values:
+<img width="1018" alt="Screenshot 2022-09-04 at 2 32 34 PM" src="https://user-images.githubusercontent.com/112493795/188306208-e31539a4-6c6b-43c4-9f95-d0d7d54edd5c.png">
+
+
 #### Conclusion:
 
-This function will be used in data compression, encode and decode algorithm and this is reduce the characters and save approx 50% of space and cost.
+This function will be used in data compression, encode and decode algorithm.Similar kind of functions are available in market but those are not help us for data compression. this function will helpful for data compression.We can use this function for integer and float values.
+#### This function is reducing your data and saving approx 50% of space and cost.
+
 
 
