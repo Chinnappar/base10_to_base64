@@ -145,7 +145,7 @@ if __name__ == "__main__":
         #print("Base10:",base10)
 
 
-        s_ui()
+        #s_ui()
         print("End - DateTime:",datetime.datetime.now())
 
     except Exception as msg:
