@@ -13,8 +13,13 @@
 # ------------------------------------------------------------------------------
 # Call required packages
 # ------------------------------------------------------------------------------
+import pandas as pd
+import numpy as np
 import datetime
-
+from pandas.errors import ParserError
+import sys
+import streamlit as st
+pd.options.mode.chained_assignment = None  # default='warn'
 
 def listToDict(b):
     s = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz+/'
@@ -138,6 +143,7 @@ if __name__ == "__main__":
         #print("Given Value:",str(s))
         #print("Base64:",base64)
         #print("Base10:",base10)
+
 
         s_ui()
         print("End - DateTime:",datetime.datetime.now())
