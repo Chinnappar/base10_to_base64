@@ -1,5 +1,5 @@
 
-### Convert Base10 to Base64 or Base10 to Base64
+### Convert Base10 to Base64 or Base64 to Base10
 
 Base64 is an encoding method for handling multibyte characters and binary data in a communication environment that uses only 64 types of printable alphanumeric characters and cannot handle other characters 
 
