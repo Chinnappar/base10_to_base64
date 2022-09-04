@@ -97,10 +97,7 @@ def base10_to_base64(decimal,datatype=None):
 # ------------------------------------------------------------------------------
 
 def s_ui():
-    st.set_page_config(layout = "wide")
-    st.title("Data Compression")
-    st.info("Developed by Chinnappar & Team (R-AI)")
-
+    print("")
 
 # ------------------------------------------------------------------------------
 # Call main function.
